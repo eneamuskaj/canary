@@ -24,12 +24,10 @@ function Comment(props) {
           <div>
             <div className="commentCard">
               <p>
-                <span style={{ fontWeight: "bold", fontSize: "18px" }}>
-                  Comment:
-                </span>
-                {item.comment}
+                <span style={{ fontWeight: "bold" }}>Comment:</span>
+                {" " + item.comment}
               </p>
-              <span style={{}}> By: {item.username} </span>
+              <span style={{ fontSize: "12px" }}> By: {item.username} </span>
             </div>
           </div>
         );

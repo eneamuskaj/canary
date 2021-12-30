@@ -1,37 +1,74 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff8d4;
+}
+body {
+  height: 95vh;
+}
+.root1 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.homeImage {
+  width: 400px;
+  height: 400px;
+}
+.mainContainer {
+  display: flex;
+  gap: 50px;
+  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
 .inputField {
   margin: auto;
   width: 50%;
-  border: 3px solid green;
+  border: 1px solid #887bb0;
+  border-radius: 3px;
   padding: 10px;
+  background-color: rgba(255, 255, 255, 0.582);
+}
+#status {
+  background-color: #887bb0;
+}
+.statusBoard {
+  display: flex;
+  justify-content: space-between;
 }
 .feed {
   margin: auto;
   width: 90%;
-  border: 3px solid green;
   padding: 10px;
-  background-color: rgb(150, 204, 150);
 }
+
 .card {
   margin: auto;
-  border: 3px solid green;
+  border: 1px solid #887bb0;
   padding: 10px;
-  background-color: rgb(192, 192, 192);
-  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.582);
+  margin: 3%;
+  border-radius: 3px;
 }
-.card > img {
-  width: 100px;
-  height: 100px;
+.statusImage {
+  width: 100%;
+}
+.add {
+  background-color: rgba(255, 255, 255, 0);
+}
+.status {
+  color: rgba(255, 255, 255, 0.582);
 }
 .commentCard {
   margin: auto;
-  border: 3px solid green;
-  padding: 10px;
-  background-color: rgb(192, 192, 192);
-  margin: 20px;
+  border: 1px solid #887bb0;
+  border-radius: 10px;
+  padding: 5px;
+
+  margin: 10px;
 }
 .socialButton {
   font-size: 10px;
-  background-color: #4caf50; /* Green */
+  background-color: #887bb0; /* Green */
   border: none;
   color: white;
   padding: 10px 0px;
@@ -40,19 +77,38 @@
   display: inline-block;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 5px;
 }
 .socials {
   display: flex;
   justify-content: flex-start;
   width: 200px;
+  height: 40px;
+}
+
+.uploadButton {
+  width: 100%;
+
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.logoutButton {
+  background-color: #887bb0;
+  border-radius: 1%;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+h1,
+h2 {
+  font-family: "Pushster", cursive;
 }
 /* login page styling */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-form {
-  border: 3px solid #f1f1f1;
-}
 
 input[type="text"],
 input[type="password"] {
@@ -60,12 +116,13 @@ input[type="password"] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #887bb0;
   box-sizing: border-box;
 }
 
 button {
-  background-color: #04aa6d;
+  background-color: #887bb0;
+  border-radius: 1%;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;

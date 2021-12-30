@@ -29,7 +29,7 @@ function Login() {
         setPassword("");
       })
       .catch((err) => {
-        console.log(err.message);
+        alert(err);
       });
   };
 
@@ -51,69 +51,80 @@ function Login() {
         window.location.replace("/homepage");
       })
       .catch((err) => {
-        console.log(err.message);
+        alert(err);
       });
   };
 
   return (
-    <div>
-      <div>
-        <form onSubmit={submitForm}>
-          <div class="container">
-            <label for="email">
-              <b>E-Mail:</b>
-            </label>
-            <input
-              onChange={handleChangeEmail}
-              value={email}
-              type="text"
-              placeholder="Enter Username"
-              name="email"
-              required
-            />
-            <label for="password">
-              <b>Password</b>
-            </label>
-            <input
-              onChange={handleChangePassword}
-              value={password}
-              type="password"
-              placeholder="Enter Password"
-              name="password"
-              required
-            />
-            <button type="submit">SignUp!</button>
+    <div className="root1">
+      <div className="mainContainer">
+        <div className="welcomeMessage">
+          <h1>Welcome To Canary!</h1>
+          <h2>A space for social interaction.</h2>
+          <img className="homeImage" alt="" src="images/canary2.svg" />
+        </div>
+        <div className="loginCards">
+          <div>
+            <form onSubmit={submitForm}>
+              <div class="container">
+                <h2>Sign Up for an Account</h2>
+                <label for="email">
+                  <b>E-Mail:</b>
+                </label>
+                <input
+                  onChange={handleChangeEmail}
+                  value={email}
+                  type="text"
+                  placeholder="Enter Username"
+                  name="email"
+                  required
+                />
+                <label for="password">
+                  <b>Password</b>
+                </label>
+                <input
+                  onChange={handleChangePassword}
+                  value={password}
+                  type="password"
+                  placeholder="Enter Password"
+                  name="password"
+                  required
+                />
+                <button type="submit">SignUp!</button>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-      <div>
-        <form onSubmit={submitForm2}>
-          <div class="container">
-            <label for="email">
-              <b>E-Mail:</b>
-            </label>
-            <input
-              onChange={handleChangeEmail2}
-              value={email2}
-              type="text"
-              placeholder="Enter Username"
-              name="email"
-              required
-            />
-            <label for="password">
-              <b>Password</b>
-            </label>
-            <input
-              onChange={handleChangePassword2}
-              value={password2}
-              type="password"
-              placeholder="Enter Password"
-              name="password"
-              required
-            />
-            <button type="submit">Log In!</button>
+          <div>
+            <form onSubmit={submitForm2}>
+              <div class="container">
+                <h2>Login in with an existing account</h2>
+                <label for="email">
+                  <b>E-Mail:</b>
+                </label>
+                <input
+                  onChange={handleChangeEmail2}
+                  value={email2}
+                  type="text"
+                  placeholder="Enter Username"
+                  name="email"
+                  required
+                />
+                <label for="password">
+                  <b>Password</b>
+                </label>
+                <input
+                  onChange={handleChangePassword2}
+                  value={password2}
+                  type="password"
+                  placeholder="Enter Password"
+                  name="password"
+                  required
+                />
+                <button type="submit">Log In!</button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

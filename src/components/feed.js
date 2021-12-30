@@ -59,40 +59,44 @@ function Feed(props) {
       {props.feed.map((item) => {
         return (
           <div className="card">
-            <img alt="" src={item.imageUrl}></img>
-            <p>
-              <span style={{ color: "red" }}> Status: </span>
-              {item.status}
-            </p>
-            <p>
-              <span style={{ color: "red" }}>By: </span>
-              {item.username}
-            </p>
-            <p>{item.likes} Likes</p>
-            <div className="socials">
-              <button
-                className="socialButton"
-                id={item.id + "+"}
-                onClick={likeItem}
-                disabled={false}
-              >
-                Like!
-              </button>
-              <button
-                className="socialButton"
-                id={item.id + "-"}
-                onClick={dislikeItem}
-                disabled={false}
-              >
-                DisLike!
-              </button>
-              <button
-                className="socialButton"
-                id={item.id}
-                onClick={deleteItem}
-              >
-                Delete
-              </button>
+            <img class="statusImage" alt="" src={item.imageUrl}></img>
+            <div className="statusBoard">
+              <div>
+                <p>
+                  <span style={{ color: "#887bb0" }}> Status: </span>
+                  {item.status}
+                </p>
+                <p>
+                  <span style={{ color: "#887bb0" }}>By: </span>
+                  {item.username}
+                </p>
+                <p>{item.likes} Likes</p>
+              </div>
+              <div className="socials">
+                <button
+                  className="socialButton"
+                  id={item.id + "+"}
+                  onClick={likeItem}
+                  disabled={false}
+                >
+                  Like!
+                </button>
+                <button
+                  className="socialButton"
+                  id={item.id + "-"}
+                  onClick={dislikeItem}
+                  disabled={false}
+                >
+                  DisLike!
+                </button>
+                <button
+                  className="socialButton"
+                  id={item.id}
+                  onClick={deleteItem}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
             <Comment id={item.id} />
             <Addcomment id={item.id} user={props.user} />

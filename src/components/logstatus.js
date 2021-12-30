@@ -12,7 +12,9 @@ function Logstatus() {
   };
   return (
     <div>
-      <button onClick={logout}>logout</button>
+      <button className="logoutButton" onClick={logout}>
+        logout
+      </button>
     </div>
   );
 }
