@@ -22,15 +22,13 @@ body {
 }
 .inputField {
   margin: auto;
-  width: 50%;
+  width: 70%;
   border: 1px solid #887bb0;
   border-radius: 3px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.582);
 }
-#status {
-  background-color: #887bb0;
-}
+
 .statusBoard {
   display: flex;
   justify-content: space-between;
@@ -54,6 +52,7 @@ body {
 }
 .add {
   background-color: rgba(255, 255, 255, 0);
+  display: flex;
 }
 .status {
   color: rgba(255, 255, 255, 0.582);
@@ -87,8 +86,7 @@ body {
 }
 
 .uploadButton {
-  width: 100%;
-
+  width: 600px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;

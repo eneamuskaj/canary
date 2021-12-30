@@ -52,10 +52,21 @@ function Input(props) {
   return (
     <div className="inputField">
       <form onSubmit={onSubmit} className="add">
-        <label htmlFor="status">What's on your mind: </label>
-        <input onChange={handleChange} value={status} type="text" id="status" />
-        <label htmlFor="status">Add Photo: </label>
-        <input class="uploadButton" type="file" onChange={handleFileChange} />
+        <input
+          onChange={handleChange}
+          value={status}
+          placeholder="Whats on your mind?"
+          type="text"
+          id="status"
+        />
+
+        <input
+          class="uploadButton"
+          type="file"
+          id="file1"
+          name="file1"
+          onChange={handleFileChange}
+        />
         <button type="submit">Submit</button>
       </form>
     </div>
