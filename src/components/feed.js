@@ -70,7 +70,19 @@ function Feed(props) {
                   <span style={{ color: "#887bb0" }}>By: </span>
                   {item.username}
                 </p>
-                <p>{item.likes} Likes</p>
+                <p>
+                  {" "}
+                  <span style={{ color: "#887bb0" }}>{item.likes} </span> Likes
+                </p>
+                <p>
+                  {" "}
+                  <span style={{ color: "#887bb0" }}>Posted on: </span>
+                  {item.createdAt !== null
+                    ? item.createdAt.toDate().toDateString() +
+                      " " +
+                      item.createdAt.toDate().toLocaleTimeString()
+                    : ""}
+                </p>
               </div>
               <div className="socials">
                 <button
@@ -93,6 +105,11 @@ function Feed(props) {
                   className="socialButton"
                   id={item.id}
                   onClick={deleteItem}
+                  style={
+                    props.user === item.username
+                      ? { display: "block" }
+                      : { display: "none" }
+                  }
                 >
                   Delete
                 </button>

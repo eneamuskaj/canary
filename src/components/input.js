@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { addDoc } from "firebase/firestore";
+import { addDoc, serverTimestamp } from "firebase/firestore";
 import { colRef } from "./firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -27,6 +27,7 @@ function Input(props) {
         username: props.user,
         likes: 0,
         imageUrl: "",
+        createdAt: serverTimestamp(),
       }).then(() => {
         setStatus("");
       });
@@ -42,6 +43,7 @@ function Input(props) {
             username: props.user,
             likes: 0,
             imageUrl: imageUrl,
+            createdAt: serverTimestamp(),
           }).then(() => {
             setStatus("");
           });
@@ -50,7 +52,7 @@ function Input(props) {
     }
   };
   return (
-    <div className="inputField">
+    <div id="input" className="inputField">
       <form onSubmit={onSubmit} className="add">
         <input
           onChange={handleChange}

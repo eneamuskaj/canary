@@ -13,6 +13,64 @@ body {
   width: 400px;
   height: 400px;
 }
+.navBar {
+  background-color: #887bb0;
+  color: rgb(0, 0, 0);
+  font-family: Verdana, sans-serif;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 74.75px;
+  right: 0px;
+}
+.navBar > * {
+  padding: 12px;
+  color: white;
+  float: left;
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 22.5px;
+  list-style-type: none;
+  cursor: pointer;
+}
+li > a {
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-weight: 800;
+  list-style-type: none;
+  text-decoration-line: none;
+  text-align: center;
+}
+.navImage {
+  width: 50px;
+  padding-left: 20px;
+}
+.logoutStatus {
+  float: right;
+  cursor: auto;
+}
+.logoutButton {
+  float: right;
+  background-color: rgb(218, 134, 173);
+  border-radius: 1%;
+  color: white;
+  margin: 8px 8px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+  margin-right: 16px;
+}
 .mainContainer {
   display: flex;
   gap: 50px;
@@ -22,6 +80,7 @@ body {
 }
 .inputField {
   margin: auto;
+  margin-top: 10%;
   width: 70%;
   border: 1px solid #887bb0;
   border-radius: 3px;
@@ -35,7 +94,7 @@ body {
 }
 .feed {
   margin: auto;
-  width: 90%;
+  width: 80%;
   padding: 10px;
 }
 
@@ -54,8 +113,17 @@ body {
   background-color: rgba(255, 255, 255, 0);
   display: flex;
 }
-.status {
-  color: rgba(255, 255, 255, 0.582);
+#status {
+  width: 50%;
+  border-radius: 7px;
+}
+#submitButton {
+  width: 25%;
+}
+.add2 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 .commentCard {
   margin: auto;
@@ -92,16 +160,7 @@ body {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-.logoutButton {
-  background-color: #887bb0;
-  border-radius: 1%;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100px;
-}
+
 h1,
 h2 {
   font-family: "Pushster", cursive;
@@ -151,6 +210,8 @@ img.avatar {
 
 .container {
   padding: 16px;
+  min-width: 220px;
+  max-width: 400px;
 }
 
 span.psw {
@@ -166,5 +227,88 @@ span.psw {
   }
   .cancelbtn {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .mainContainer {
+    flex-direction: column;
+  }
+  .homeImage {
+    width: 300px;
+    height: 300px;
+  }
+  #input {
+    margin-top: 23%;
+  }
+  .add {
+    flex-direction: column;
+  }
+  #status {
+    width: 100%;
+  }
+  #submitButton {
+    width: 36%;
+  }
+  .socials {
+    flex-direction: column;
+  }
+  p {
+    word-wrap: break-word;
+  }
+  .uploadButton {
+    width: 100%;
+  }
+  .inputField2 {
+    margin: 10px;
+  }
+  .statusBoard {
+    flex-direction: column;
+  }
+  .socials {
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+    justify-content: center;
+  }
+  .socialButton {
+    max-width: 70px;
+  }
+  .feed {
+    width: 95%;
+    padding: 1%;
+  }
+  .navBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navBar > * {
+    float: none;
+  }
+  .logoutButton {
+    float: none;
+  }
+  .logoutStatus {
+    float: none;
+  }
+  .navBar {
+    height: auto;
+  }
+
+  .navBar {
+    position: relative;
+    width: auto;
+    padding: 0;
+  }
+  .logoutStatus {
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
 }

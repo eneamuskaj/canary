@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Feed from "./components/feed";
 import Input from "./components/input";
-import Logstatus from "./components/logstatus";
+import Navabar from "./components/navbar";
 import { colRef } from "./components/firebase";
-import { onSnapshot } from "firebase/firestore";
+import { onSnapshot, orderBy, query } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const auth = getAuth();
+
+const q = query(colRef, orderBy("createdAt", "desc"));
 
 function App() {
   const [feed, setFeed] = useState([]);
@@ -15,12 +17,12 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user === null) {
-        setUsername("user");
+        setUsername("anonymous");
       } else {
         setUsername(user.email);
       }
     });
-    onSnapshot(colRef, (snapshot) => {
+    onSnapshot(q, (snapshot) => {
       let array = [];
       snapshot.docs.forEach((doc) => array.push({ ...doc.data(), id: doc.id }));
       setFeed(array);
@@ -28,8 +30,7 @@ function App() {
   }, []);
   return (
     <div>
-      <Logstatus />
-      {/* <Login auth={auth} /> */}
+      <Navabar user={username} />
       <Input user={username} />
       <Feed feed={feed} user={username} />
     </div>

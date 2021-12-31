@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore";
 
 function Addcomment(props) {
   const [status, setStatus] = useState("");
@@ -15,6 +20,7 @@ function Addcomment(props) {
     addDoc(colRef2, {
       username: props.user,
       comment: status,
+      createdAt: serverTimestamp(),
     }).then(() => {
       setStatus("");
     });
@@ -23,14 +29,15 @@ function Addcomment(props) {
     <div>
       <div className="inputField2">
         <form onSubmit={onSubmit} className="add2">
-          <label htmlFor="status">Comment Here </label>
           <input
             onChange={handleChange}
             value={status}
             id="status"
             type="text"
           />
-          <button type="submit">Comment</button>
+          <button id="submitButton" type="submit">
+            Comment
+          </button>
         </form>
       </div>
     </div>

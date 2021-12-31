@@ -27,6 +27,7 @@ function Login() {
         // console.log("user created: ", cred.user);
         setEmail("");
         setPassword("");
+        window.location.replace("/homepage");
       })
       .catch((err) => {
         alert(err);
